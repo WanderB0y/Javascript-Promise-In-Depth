@@ -16,12 +16,22 @@ let i = 0;
     const myPromise = new Promise((resolve, reject) => {
         setTimeout(()=> {
            i += 40;
-        }, -1)
+        }, 1)
     })
 
     const forFuture = new Promise((resolve, reject)=> {
         setTimeout(()=> {
-            console.log(i)
+
+            reject("Error ice cream")
         }, 2)
     })
 console.log(i + "Nena")
+
+   forFuture.then((resolvedVlue) => {
+    console.log(resolvedVlue);
+    return "NIgga"
+   }).then((nigga) => {
+        console.log(nigga)
+   }).catch((error)=> {
+    console.log(error)
+   })
